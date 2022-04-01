@@ -1,19 +1,28 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 
+const HistoryStyled = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    flex-grow: 1;
+    overflow: auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+`;
+  
 export const History: FC = (props) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        border: "1px solid black",
-        padding: 10,
-        flexGrow: 1,
-        overflow: "auto"
-      }}
-    >
-      {props.children}
-    </div>
-  );
+    const historyRef = useRef<HTMLDivElement>(null)
+    useEffect(() => {
+        if (historyRef && historyRef.current) {
+            historyRef.current.scrollTop = historyRef.current.scrollHeight;
+        }
+    }, [props.children]);
+
+    return (
+        <HistoryStyled ref={historyRef}>
+            {props.children}
+        </HistoryStyled>
+    );
 };

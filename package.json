@@ -1,5 +1,5 @@
 {
-  "name": "cognigy-task",
+  "name": "calengi-webato",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -7,18 +7,24 @@
   "dependencies": {
     "@cognigy/socket-client": "4.5.5",
     "@reduxjs/toolkit": "1.8.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-redux": "7.2.6",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "@types/react": "17.0.20",
     "@types/react-dom": "17.0.9",
+    "@types/styled-components": "^5.1.24",
     "typescript": "4.4.2"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "browserslist": [
     ">0.2%",
