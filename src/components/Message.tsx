@@ -37,7 +37,7 @@ export const Message: FC<MessageProps> = (props) => {
     const isIncomingMessage = direction === MessageDirection.Incoming;
 
     return (
-       <MessageStyled data-testid="message" isIncomingMessage={isIncomingMessage}>
+       <FullMessageStyled data-testid="message" isIncomingMessage={isIncomingMessage}>
             {isIncomingMessage && 
                 <BotImage />
             }
