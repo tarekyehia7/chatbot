@@ -35,11 +35,11 @@ export default function App() {
     const isBotTyping = typingStatus === TypingStatus.TypingOn
     
     useEffect(() => {
-        async function SocketConnect() {
+        async function socketConnection() {
             const client = await handleSocket(dispatch, chat);
             setClientSocket(client);
         }
-        SocketConnect()
+        socketConnection()
     }, [setClientSocket])
 
     const onSubmitClicked = async (message: string) => {
